@@ -23,6 +23,20 @@ function mergeSort (vetor) {
             posDir++
         }
     }
+
+    let sobra
+
+    if (posEsq < posDir) {
+        sobra = vetEsq.slice(posEsq)
+    }
+    else {
+        sobra = vetDir.slice(posDir)
+    }
+
+    return [...vetRes, ...sobra] // Anotação "spread" -> concatenou ordenado
 }
 
 let nums = [77, 44, 22, 33, 99, 55, 88, 66, 0, 11]
+
+let numsOrd = mergeSort(nums)
+console.log({numsOrd})
